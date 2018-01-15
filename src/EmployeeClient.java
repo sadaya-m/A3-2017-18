@@ -25,6 +25,12 @@ public class EmployeeClient
     // ***** declaration of variables *****
         
         String strin;
+        String delim = "[ :]+";		// delimiter string for splitting input string
+        String[] tokens = null;          // array for splitting input
+        
+        int n = 0;      //counter
+        
+        Employee[] employeeList = new Employee[4];     //array of objects
 
     // ***** create objects *****
         
@@ -46,7 +52,16 @@ public class EmployeeClient
         strin = fin.readLine();
         
         while(strin != null){
-            System.out.println(strin);
+            
+            employeeList[n] = new Employee();           //create object
+            System.out.println(employeeList[n].getID());
+            
+            tokens = strin.split(delim);        //split string into tokens
+            for(int i = 0; i< tokens.length; i++){
+                System.out.println(tokens[i]);          //print each tokens
+            } // end for tokens*/
+            
+            //System.out.println(strin);
             strin = fin.readLine();
         }//end eof loop
 

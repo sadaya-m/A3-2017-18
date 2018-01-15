@@ -14,13 +14,39 @@
  {  // begin class
  	
     // *********** class constants ***********
-
-
+       
+        private static int nextID = 1000;
+        private final int MAXHOURS = 40;        //hours 
+     
     // ********** instance variable **********
+    
+        private int ID;
 
     // ********** constructors ***************
+        
+        /************************************
+        * Purpose: default constructor
+        * Interface:
+        *   in: none
+        *   out: none
+        ************************************/
+        public Employee(){
+            ID = nextID++;  //increment id
+            
+        }//end default constructor
+        
 
     // ********** accessors ******************
+        
+        /************************************
+        * Purpose: get unique ID
+        * Interface:
+        *   in: none
+        *   out: int ID
+        ************************************/
+        public int getID(){
+            return ID;            
+        }//end default constructor
 
     // ********** mutators *******************
  
