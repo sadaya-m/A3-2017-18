@@ -20,7 +20,9 @@
      
     // ********** instance variable **********
     
-        private int ID;
+        private int ID;         //Id
+        private int wage;
+        private int hours;
 
     // ********** constructors ***************
         
@@ -32,7 +34,8 @@
         ************************************/
         public Employee(){
             ID = nextID++;  //increment id
-            
+            wage = 0;       //default wage
+            hours = 0;      //default hours
         }//end default constructor
         
 
@@ -45,9 +48,40 @@
         *   out: int ID
         ************************************/
         public int getID(){
-            return ID;            
+            return ID;
         }//end default constructor
+        
+        /************************************
+        * Purpose: get rate/hourly wage
+        * Interface:
+        *   in: none
+        *   out: int rate/hourly wage
+        ************************************/
+        public int getRate(){
+            return wage;
+        }//end getRate
+        
+        /************************************
+        * Purpose: get hours
+        * Interface:
+        *   in: none
+        *   out: int hours
+        ************************************/
+        public int getHours(){
+            return hours;
+        }//end getRate
 
     // ********** mutators *******************
+        
+        /************************************
+        * Purpose: set wage and number of hours info
+        * Interface:
+        *   in: none
+        *   out: int wage
+        ************************************/
+        public void setEmployeeInfo(int r, int h){
+            wage = r;
+            hours = h;
+        }//end setEmployeeInfo
  
  }  // end class

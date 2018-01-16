@@ -58,8 +58,12 @@ public class EmployeeClient
             
             tokens = strin.split(delim);        //split string into tokens
             for(int i = 0; i< tokens.length; i++){
-                System.out.println(tokens[i]);          //print each tokens
-            } // end for tokens*/
+                //System.out.println(tokens[0]);          //print each tokens
+                employeeList[n].setEmployeeInfo(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+            } // end for tokens*
+            
+            System.out.println(employeeList[n].getRate());
+            System.out.println(employeeList[n].getHours());
             
             //System.out.println(strin);
             strin = fin.readLine();
