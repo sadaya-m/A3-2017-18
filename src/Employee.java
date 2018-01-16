@@ -23,7 +23,7 @@
         private int ID;         //Id
         private int wage;
         private int hours;
-
+        
     // ********** constructors ***************
         
         /************************************
@@ -88,6 +88,7 @@
         *   out: int overtime pay
         ************************************/
         public int calculateOTPay(){
+            //reg = 0;
             int OTHours = getHours() - MAXHOURS;      //subtract number of hours from max hours
             return getRate() * OTHours;
         }//end calculate overtime pay
@@ -101,6 +102,40 @@
         public int calculateOTRegPay(){
             return getRate()* MAXHOURS;
         }//end calculate regular pay in overtime pay
+        
+        /************************************
+        * Purpose: to string for regular pay
+        * Interface:
+        *   in: none
+        *   out: string
+        ************************************/
+        public String toStringReg(){
+            String string;
+            string = "ID:\t" + getID() + "\n";
+            string += "Hours:\t" + getHours() + "\n";
+            string += "Wage:\t" + getRate() + "\n";
+            string += "Regular Pay:\t" + calculateRegPay() + "\n";
+            string += "Overtime Pay:\t" + "0" + "\n";
+            string += "Gross Pay:\t" + calculateRegPay() + "\n";
+            return string;
+        }//end tostringReg
+        
+        /************************************
+        * Purpose: to string for overtime pay
+        * Interface:
+        *   in: none
+        *   out: string
+        ************************************/
+        public String toStringOT(){
+            String string;
+            string = "ID:\t" + getID() + "\n";
+            string += "Hours:\t" + getHours() + "\n";
+            string += "Wage:\t" + getRate() + "\n";
+            string += "Regular Pay:\t" + calculateOTRegPay() + "\n";
+            string += "Overtime Pay:\t" + calculateOTPay() + "\n";
+            string += "Gross Pay:\t" + (calculateOTRegPay() + calculateOTPay()) + "\n";
+            return string;
+        }//to stringOT
         
     // ********** mutators *******************
         

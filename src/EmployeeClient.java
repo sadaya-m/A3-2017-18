@@ -54,7 +54,7 @@ public class EmployeeClient
         while(strin != null){
             
             employeeList[n] = new Employee();           //create object
-            System.out.println(employeeList[n].getID());
+            //System.out.println(employeeList[n].getID());
             
             tokens = strin.split(delim);        //split string into tokens
             for(int i = 0; i< tokens.length; i++){
@@ -63,11 +63,10 @@ public class EmployeeClient
             } // end for tokens*
             
             if(employeeList[n].getHours() <= 40){
-                System.out.println(employeeList[n].calculateRegPay());
+                System.out.println(employeeList[n].toStringReg());
             }//end if
             else{
-                System.out.println(employeeList[n].calculateOTPay());
-                System.out.println(employeeList[n].calculateOTRegPay());
+                System.out.println(employeeList[n].toStringOT());
             }//end else
             
             //System.out.println(employeeList[n].getRate());
