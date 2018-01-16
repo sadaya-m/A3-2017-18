@@ -30,7 +30,7 @@ public class EmployeeClient
         
         int n = 0;      //counter
         
-        Employee[] employeeList = new Employee[4];     //array of objects
+        Employee[] employeeList = new Employee[5];     //array of objects
 
     // ***** create objects *****
         
@@ -62,8 +62,16 @@ public class EmployeeClient
                 employeeList[n].setEmployeeInfo(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
             } // end for tokens*
             
-            System.out.println(employeeList[n].getRate());
-            System.out.println(employeeList[n].getHours());
+            if(employeeList[n].getHours() <= 40){
+                System.out.println(employeeList[n].calculateRegPay());
+            }//end if
+            else{
+                System.out.println(employeeList[n].calculateOTPay());
+                System.out.println(employeeList[n].calculateOTRegPay());
+            }//end else
+            
+            //System.out.println(employeeList[n].getRate());
+            //System.out.println(employeeList[n].getHours());
             
             //System.out.println(strin);
             strin = fin.readLine();

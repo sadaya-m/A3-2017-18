@@ -16,7 +16,7 @@
     // *********** class constants ***********
        
         private static int nextID = 1000;
-        private final int MAXHOURS = 40;        //hours 
+        private final int MAXHOURS = 40;        //max hours before overtime
      
     // ********** instance variable **********
     
@@ -69,8 +69,39 @@
         ************************************/
         public int getHours(){
             return hours;
-        }//end getRate
+        }//end getHours
+        
+        /************************************
+        * Purpose: calculate regular pay (rate*hours)
+        * Interface:
+        *   in: none
+        *   out: int regular pay
+        ************************************/
+        public int calculateRegPay(){
+            return getRate() * getHours();
+        }//end calculate regular pay
 
+        /************************************
+        * Purpose: calculate overtime pay (rate*(hours - maxhour))
+        * Interface:
+        *   in: none
+        *   out: int overtime pay
+        ************************************/
+        public int calculateOTPay(){
+            int OTHours = getHours() - MAXHOURS;      //subtract number of hours from max hours
+            return getRate() * OTHours;
+        }//end calculate overtime pay
+        
+        /************************************
+        * Purpose: calculate regular pay when there is overtime pay
+        * Interface:
+        *   in: none
+        *   out: int overtime regular pay
+        ************************************/
+        public int calculateOTRegPay(){
+            return getRate()* MAXHOURS;
+        }//end calculate regular pay in overtime pay
+        
     // ********** mutators *******************
         
         /************************************
