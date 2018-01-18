@@ -32,10 +32,10 @@
         *   in: none
         *   out: none
         ************************************/
-        public Employee(){
+        public Employee(int r, int h){
             ID = nextID++;  //increment id
-            wage = 0;       //default wage
-            hours = 0;      //default hours
+            wage = r;       //default wage
+            hours = h;      //default hours
         }//end default constructor
         
 
@@ -145,9 +145,9 @@
         *   in: none
         *   out: int wage
         ************************************/
-        public void setEmployeeInfo(int r, int h){
+        /*public void setEmployeeInfo(int r, int h){
             wage = r;
             hours = h;
-        }//end setEmployeeInfo
+        }//end setEmployeeInfo*/
  
  }  // end class
