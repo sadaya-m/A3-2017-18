@@ -76,6 +76,11 @@
         * Interface:
         *   in: none
         *   out: int regular pay
+        
+        this method should calculate the regular pay for both over 40 hours and not over 40 hours
+        this will require that the method determine if hours is over 40 and calculate using an appropriate
+        value for hours.
+        as it is this code will not calculate correctly if hours > 40
         ************************************/
         public int calculateRegPay(){
             return getRate() * getHours();
@@ -86,6 +91,8 @@
         * Interface:
         *   in: none
         *   out: int overtime pay
+        
+        same as the calculate regular pay method, this one should calcuate overtime pay if hours > 40 or return 0 if hours !> 40
         ************************************/
         public int calculateOTPay(){
             //reg = 0;
@@ -108,6 +115,8 @@
         * Interface:
         *   in: none
         *   out: string
+        
+        when you fix up the calculate pay methods you will only need one toString() method
         ************************************/
         public String toStringReg(){
             String string;
