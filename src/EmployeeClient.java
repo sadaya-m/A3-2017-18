@@ -59,7 +59,10 @@ public class EmployeeClient
             tokens = strin.split(delim);        //split string into tokens
             
             employeeList.add(new Employee(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1])));
-            
+  // this eof loop should just load the list do the printing and calculating and other stuff later in the client code
+// as i indicated in the comments i added to the class code, your client code should not be concerned with hours > 40
+// the client code should simply request the pay or the overtime pay or the regular pay and the class code will determine
+// what calculations to make
             if(employeeList.get(n).getHours() <= 40){
                 System.out.println(employeeList.get(n).toStringReg());
             }//end if
