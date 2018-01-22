@@ -60,12 +60,7 @@ public class EmployeeClient
             
             employeeList.add(new Employee(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1])));
             
-            if(employeeList.get(n).getHours() <= 40){
-                System.out.println(employeeList.get(n).toStringReg());
-            }//end if
-            else{
-                System.out.println(employeeList.get(n).toStringOT());
-            }//end else*/
+            System.out.println(employeeList.get(n).toString());
             
             n++;
             strin = fin.readLine();
@@ -75,7 +70,8 @@ public class EmployeeClient
         
         System.out.println("Employee 1 ID: " + employeeList.get(0).getID());
         System.out.println("Employee 2 Regular Pay: " + employeeList.get(1).calculateRegPay());
-        System.out.println("Employee 2 Overtime Pay: " + employeeList.get(2).calculateOTPay());
+        System.out.println("Employee 3 Overtime Pay: " + employeeList.get(2).calculateOTPay());
+        System.out.println("Employee 4 Gross Pay: " + employeeList.get(3).calculateGrossPay());
 
     // ***** closing message *****
 

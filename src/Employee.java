@@ -23,6 +23,7 @@
         private int ID;         //Id
         private int wage;
         private int hours;
+        private int overtime;
         
     // ********** constructors ***************
         
@@ -72,82 +73,68 @@
         }//end getHours
         
         /************************************
-        * Purpose: calculate regular pay (rate*hours)
+        * Purpose: calculate regular pay
         * Interface:
         *   in: none
         *   out: int regular pay
         ************************************/
         public int calculateRegPay(){
-            return getRate() * getHours();
+            int pay;
+            if(hours <= 40){
+                pay = getHours() * getRate();
+            }//end if
+            else{
+                pay = MAXHOURS * getRate();
+            }//end else
+            return pay;
         }//end calculate regular pay
 
         /************************************
-        * Purpose: calculate overtime pay (rate*(hours - maxhour))
+        * Purpose: calculate overtime pay
         * Interface:
         *   in: none
         *   out: int overtime pay
         ************************************/
         public int calculateOTPay(){
-            //reg = 0;
-            int OTHours = getHours() - MAXHOURS;      //subtract number of hours from max hours
-            return getRate() * OTHours;
+            int overtime;
+            int OTHours;
+            if(hours <= 40){
+                overtime = 0;
+            }//end if
+            else{
+                OTHours = getHours() - MAXHOURS;
+                overtime = OTHours * getRate();
+            }//end else
+            return overtime;
+        }//end calculate overtime pay
+        
+         /************************************
+        * Purpose: calculate overtime pay
+        * Interface:
+        *   in: none
+        *   out: int overtime pay
+        ************************************/
+        public int calculateGrossPay(){
+            return calculateRegPay() + calculateOTPay();
         }//end calculate overtime pay
         
         /************************************
-        * Purpose: calculate regular pay when there is overtime pay
-        * Interface:
-        *   in: none
-        *   out: int overtime regular pay
-        ************************************/
-        public int calculateOTRegPay(){
-            return getRate()* MAXHOURS;
-        }//end calculate regular pay in overtime pay
-        
-        /************************************
-        * Purpose: to string for regular pay
+        * Purpose: to string method
         * Interface:
         *   in: none
         *   out: string
         ************************************/
-        public String toStringReg(){
+        public String toString(){
             String string;
             string = "ID:\t" + getID() + "\n";
             string += "Hours:\t" + getHours() + "\n";
             string += "Wage:\t" + getRate() + "\n";
             string += "Regular Pay:\t" + calculateRegPay() + "\n";
-            string += "Overtime Pay:\t" + "0" + "\n";
-            string += "Gross Pay:\t" + calculateRegPay() + "\n";
+            string += "Overtime Pay:\t" + calculateOTPay() + "\n";
+            string += "Gross Pay:\t" + calculateGrossPay() + "\n";
             return string;
         }//end tostringReg
         
-        /************************************
-        * Purpose: to string for overtime pay
-        * Interface:
-        *   in: none
-        *   out: string
-        ************************************/
-        public String toStringOT(){
-            String string;
-            string = "ID:\t" + getID() + "\n";
-            string += "Hours:\t" + getHours() + "\n";
-            string += "Wage:\t" + getRate() + "\n";
-            string += "Regular Pay:\t" + calculateOTRegPay() + "\n";
-            string += "Overtime Pay:\t" + calculateOTPay() + "\n";
-            string += "Gross Pay:\t" + (calculateOTRegPay() + calculateOTPay()) + "\n";
-            return string;
-        }//to stringOT
-        
     // ********** mutators *******************
         
-        /************************************
-        * Purpose: set wage and number of hours info
-        * Interface:
-        *   in: none
-        *   out: int wage
-        ************************************/
-        /*public void setEmployeeInfo(int r, int h){
-            wage = r;
-            hours = h;
-        }//end setEmployeeInfo*/
- 
  }  // end class
