@@ -23,7 +23,6 @@
         private int ID;         //Id
         private int wage;
         private int hours;
-        private int overtime;
         
     // ********** constructors ***************
         
@@ -39,7 +38,6 @@
             hours = h;      //default hours
         }//end default constructor
         
-
     // ********** accessors ******************
         
         /************************************

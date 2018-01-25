@@ -33,8 +33,6 @@ public class EmployeeClient
         
         int n = 0;      //counter
         
-        //Employee[] employeeList = new Employee[5];     //array of objects
-
     // ***** create objects *****
         
         ProgramInfo programInfo = new ProgramInfo();
